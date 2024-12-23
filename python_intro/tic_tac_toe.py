@@ -79,12 +79,13 @@ def the_game():
           try:
             turn = turn.split(' ')
             #достаем координату по горизонтали
-            i = int(turn[0])
+            i = turn[0].isdigit()
             #достаем координату по вертикали
-            j = int(turn[1])
+            j = turn[1].isdigit()
             #достаем и записивыем значение
             value = str(turn[2]).upper()
-            table[i][j] = value
+            if i and j:
+              table[i][j] = value
 
           #Отрисовываем таблицу с полученным значением после хода
             for row in table:
