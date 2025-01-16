@@ -3,4 +3,6 @@
 ```
 from news.models import*
 ```
+<ul>
 <lo>Создать двух пользователей (с помощью метода User.objects.create_user('username')).</lo>
+</ul>
