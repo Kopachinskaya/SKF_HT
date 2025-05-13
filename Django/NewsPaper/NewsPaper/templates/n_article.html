@@ -1,0 +1,20 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
+{% block title %}
+{{ flatpage.title }}
+{% endblock title %}
+
+{% block content %}
+   {% if n_article %}
+   <p>
+   <h1>{{ n_article.title|censor }}</h1>
+   <h7>Новость от {{ n_article.creation_date|date:'d M Y' }}</h7>
+   <hr>
+   
+   <h5>{{ n_article.text|censor }}</h5>
+   {% else %}
+       <h2>Пока без новостей!</h2>
+   {% endif %}
+{% endblock content %}
