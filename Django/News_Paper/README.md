@@ -12,6 +12,9 @@
 ```
 ### 3. Вывод информации о новости на страницу /templates/n_article.html
 
+### 4. Cобственный фильтр censor: /news/templatetags/custom_filters.py
+
+### 5. Все новые страницы используют шаблон default.html как основу.y
 
 
 # HW-03 2.9 Команды запускаемые в Shell
