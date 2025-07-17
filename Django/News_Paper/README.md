@@ -10,7 +10,7 @@
   <td>{{ n.text|truncatechars:20|censor }}</td>
 </tr>
 ```
-### 3. Вывод информации о новости на страницу /templates/n_article.html
+### 3. Вывод информации о новости на страницу [/templates/n_article.html](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/templates/n_article.html)
 
 ### 4. Cобственный фильтр censor: /news/templatetags/custom_filters.py
 
