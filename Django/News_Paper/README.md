@@ -1,3 +1,19 @@
+# 3.6 (HW-03)
+### 1. Добавлена новая страница с адресом /news/
+### 2. Вывод на страницу /templates/news.html
+
+```
+<tr>
+  <td>{{ n.id }}</td>
+  <td>{{ n.title|censor }}</td>
+  <td>{{ n.creation_date|date:'d M Y' }}</td>
+  <td>{{ n.text|truncatechars:20|censor }}</td>
+</tr>
+```
+### 3. Вывод информации о новости на страницу /templates/n_article.html
+
+
+
 # HW-03 2.9 Команды запускаемые в Shell
 
 ```
