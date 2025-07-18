@@ -21,6 +21,10 @@
    
    
    <hr>
+       {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
+    {% if perms.news.add_post %}
+    <a href="{% url 'news_create' %}">Добавить новость</a>
+    {% endif %}
    {% if news %}
         <table  align="center" class="table-sm">
            <tr>
@@ -44,6 +48,16 @@
                <td>{{ n.title|censor }}</td>
                <td>{{ n.creation_date|date:'d M Y' }}</td>
                <td>{{ n.text|truncatechars:20|censor }}</td>
+
+                <td>
+                    {# А здесь доступ для каждой ссылки теперь будем проверять отдельно #}
+                    {% if perms.news.change_post %}
+                    <a href="{% url 'news_update' pk=n.id %}">Изменить</a>
+                    {% endif %}
+                    {% if perms.news.delete_post %}
+                    <a href="{% url 'news_delete' n.id %}">Удалить</a>
+                    {% endif %}
+                </td>
            </tr>
            {% endfor %}
 

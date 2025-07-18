@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib.auth.mixins import PermissionRequiredMixin
 # Create your views here.
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
@@ -86,7 +86,8 @@ class AArticleDetail(DetailView):
     # Название объекта, в котором будет выбранный пользователем продукт
     context_object_name = 'a_article'
 
-class NewsCreate(CreateView):
+class NewsCreate(PermissionRequiredMixin,CreateView):
+    permission_required = ('news.add_post',)
     form_class = NewsForm
     model = Post
     template_name = 'news_create.html'
@@ -106,7 +107,8 @@ class ArticleCreate(CreateView):
         news.category_type = 'AR'
         return super().form_valid(form)
     
-class NewsUpdate(UpdateView):
+class NewsUpdate(PermissionRequiredMixin,UpdateView):
+    permission_required = ('news.change_post',)
     form_class = NewsForm
     model = Post
     template_name = 'news_create.html'
@@ -117,7 +119,8 @@ class ArticlesUpdate(UpdateView):
     template_name = 'article_create.html'
 
 # Представление удаляющее запись.
-class PostDelete(DeleteView):
+class PostDelete(PermissionRequiredMixin,DeleteView):
+    permission_required = ('news.delete_post',)
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('news')
