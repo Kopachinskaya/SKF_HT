@@ -1,3 +1,35 @@
+# 4.7 (HW-03)
+### 1.  Постраничный вывод на /news/
+#### [news.html](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/templates/news.html)
+#### [views.py](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/news/views.py)
+
+### 2/3. Поиск по категориям [filters.py](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/news/filters.py)
+### 4. Создание, редактирование и удаление объектов: код в [views.py](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/news/views.py), [forms.py](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/news/forms.py) и [templates](https://github.com/Kopachinskaya/SKF_HT/tree/main/Django/News_Paper/NewsPaper/templates)
+
+
+
+
+
+
+# 3.6 (HW-03)
+### 1. Добавлена новая страница с адресом /news/
+### 2. Вывод на страницу /templates/news.html
+
+```
+<tr>
+  <td>{{ n.id }}</td>
+  <td>{{ n.title|censor }}</td>
+  <td>{{ n.creation_date|date:'d M Y' }}</td>
+  <td>{{ n.text|truncatechars:20|censor }}</td>
+</tr>
+```
+### 3. Вывод информации о новости на страницу [/templates/n_article.html](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/templates/n_article.html)
+
+### 4. Cобственный фильтр censor: [/news/templatetags/custom_filters.py](https://github.com/Kopachinskaya/SKF_HT/blob/main/Django/News_Paper/NewsPaper/news/templatetags/custom_filters.py)
+
+### 5. Все новые страницы используют шаблон default.html как основу
+
+
 # HW-03 2.9 Команды запускаемые в Shell
 
 ```
